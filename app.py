@@ -48,8 +48,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# PDF Generation Functions - MOVED TO TOP FOR BETTER ORGANIZATION
+# Header
+st.markdown('<div class="main-header"><h1>🏥 Medical Certificate Generator</h1><p>Professional Medical & Fitness Certificates</p></div>', unsafe_allow_html=True)
 
+# PDF Generation Functions
 def generate_medical_certificate(clinic_name, clinic_address, clinic_phone, clinic_email, clinic_reg,
                                  doctor_name, doctor_qualification, doctor_reg_no, doctor_specialty,
                                  patient_name, patient_age, patient_gender, patient_designation,
@@ -415,9 +417,6 @@ def generate_form_1a(clinic_name, clinic_address, clinic_phone, clinic_email, cl
     filename = f"certificates/Form_1A_{applicant_name.replace(' ', '_')}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
     pdf.output(filename)
     return filename
-
-# Header
-st.markdown('<div class="main-header"><h1>🏥 Medical Certificate Generator</h1><p>Professional Medical & Fitness Certificates</p></div>', unsafe_allow_html=True)
 
 # Sidebar for clinic information
 with st.sidebar:
