@@ -4,6 +4,13 @@ from fpdf import FPDF
 import os
 from pathlib import Path
 
+# Page config - MUST BE FIRST!
+st.set_page_config(
+    page_title="Medical Certificate Generator",
+    page_icon="🏥",
+    layout="wide"
+)
+
 # Create certificates directory if it doesn't exist
 Path("certificates").mkdir(exist_ok=True)
 
@@ -36,13 +43,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
-# Page config
-st.set_page_config(
-    page_title="Medical Certificate Generator",
-    page_icon="🏥",
-    layout="wide"
-)
 
 # Header
 st.markdown('<div class="main-header"><h1>🏥 Medical Certificate Generator</h1><p>Professional Medical & Fitness Certificates</p></div>', unsafe_allow_html=True)
